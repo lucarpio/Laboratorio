@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\axcel\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\axcel\\.nuget\\packages"
+    ]
+  }
+}

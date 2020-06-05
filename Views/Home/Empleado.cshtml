@@ -1,0 +1,65 @@
+@model Laboratorio.Models.Empleado;
+@{
+    ViewData["Title"] = "Registro de empleado";
+}
+
+<div class="card bg-dark">
+    <img src="/images/empleado.jpg" class="card-img img-fluid">
+    <div class="card-img-overlay">
+        <h1 class="text-light text-center">@ViewData["Title"]</h1>
+        <hr style="border-top: 1px solid white">
+        <div class="container text-light">
+            <form asp-action="EmpleadoCreate">                
+                <div class="row">
+                    <div class="col">
+                        <h4>Nombres</h4>
+                        <input asp-for="Nombre" class="form-control" placeholder="Ingrese su nombre" >
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <h4>Apellidos</h4>
+                        <input asp-for="Apellido" class="form-control" placeholder="Ingrese su apellido" >
+                        <span asp-validation-for="Apellido" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4>Email</h4>
+                        <input asp-for="Email" class="form-control" placeholder="Ingrese su dirección de correo">
+                    </div>
+                    <div class="col">
+                        <h4>Teléfono</h4>
+                        <input asp-for="Tel" class="form-control" placeholder="Ingrese su número de teléfono">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4>Dni</h4>
+                        <input asp-for="Dni" class="form-control" placeholder="Ingrese su número de DNI">
+                    </div>
+                    <div class="col">
+                        <h4>Cumpleaños</h4>
+                        <input asp-for="Birth" class="form-control" placeholder="Fecha de nacimiento">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4>Sexo</h4>
+                        <label><input type="radio" asp-for="Sexo" value="M">Masculino</label>
+                        <label><input type="radio" asp-for="Sexo" value="F">Femenino</label>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="text-center"><label><input asp-for="Agree" type="checkbox">Acepta los <a href="#">Términos y Condiciones</a></label></h5>
+                </div>
+                <div class="text-center">
+                    <input type="submit" value="Registro" style="margin-top: 10px;" class="btn btn-success">
+                </div>
+                <div class="alert alert-success" role="alert" style="margin: 10px;">
+                    @Html.DisplayFor(mode1 => mode1.mensaje)
+                </div>
+            </form>
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,44 @@
+@model Laboratorio.Models.Sueldo
+@{
+    ViewData["Title"] = "Calculadora de Sueldo";
+}
+
+<h1 class="text-center text-light">@ViewData["Title"]</h1>
+<hr style="border-top: 1px solid white">
+<img src="/images/sueldo.jpg" class="rounded mx-auto d-block" width="60%" height="auto">
+<div class="container text-light">
+    <form asp-action="SueldoCreate">
+        <div class="row">
+            <div class="col">
+                <h4>Sueldo</h4>
+                <input asp-for="sueldo" class="form-control" placeholder="Ingrese su sueldo">
+            </div>                
+            <div class="col">
+                <h4>Cantidad de meses</h4>
+                <select asp-for="meses" class="custom-select">
+                    <option selected>Cantidad de meses</option>
+                    <option value="2">2 Dos</option>
+                    <option value="3">3 Tres</option>
+                    <option value="4">4 Cuatro</option>
+                    <option value="5">5 Cinco</option>
+                    <option value="6">6 Seis</option>
+                    <option value="7">7 Siete</option>
+                    <option value="8">8 Ocho</option>
+                    <option value="9">9 Nueve</option>
+                    <option value="10">10 Diez</option>
+                    <option value="11">11 Once</option>
+                    <option value="12">12 Doce</option>
+                </select>
+            </div>
+        </div>
+        <p></p>
+        <div class="text-center">
+            <input type="submit" value="Calcular" class="btn btn-success">
+        </div>
+    </form>
+</div>
+
+
+<div class="alert alert-success" role="alert" style="margin: 10px;">
+  @Html.DisplayFor(mode1 => mode1.mensaje)
+</div>
